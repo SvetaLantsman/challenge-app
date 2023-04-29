@@ -1,9 +1,10 @@
 import styles from "./CreateUser.module.css";
+import Button from "../UI/Button";
 import React, {useState} from "react";
 const CreateUser =(props)=>{
     const [inputName, setInputName] = useState("");
     const [inputAge, setInputAge] = useState("");
-    
+
 
     const nameChangeHandler =(event)=>{
         setInputName(event.target.value);
@@ -27,7 +28,7 @@ const CreateUser =(props)=>{
                 <input type="text" id="name" value={inputName} onChange={nameChangeHandler}></input>
                 <label>Age</label>
                 <input type="number" id="age" value={inputAge} onChange={ageChangeHandler}></input>
-                <button type="submit">Add User</button>
+                <Button type="submit">Add User</Button>
             </form>
         </div>
     )
