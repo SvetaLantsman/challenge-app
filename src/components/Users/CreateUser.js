@@ -47,7 +47,7 @@ const CreateUser =(props)=>{
             <Card className={styles.input}>
             <form onSubmit={createUserHandler}>
                 <label>Name</label>
-                <input type="text" id="name" value={inputName} onChange={nameChangeHandler}></input>
+                <input type="text" htmlFor="name" value={inputName} onChange={nameChangeHandler}></input>
                 <label>Age</label>
                 <input type="number" id="age" value={inputAge} onChange={ageChangeHandler}></input>
                 <Button type="submit">Add User</Button>
