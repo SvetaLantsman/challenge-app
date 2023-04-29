@@ -1,6 +1,8 @@
 import styles from "./CreateUser.module.css";
 import Button from "../UI/Button";
 import React, {useState} from "react";
+import ErrorModal from "../UI/ErrorModal";
+import Card from "../UI/Card";
 const CreateUser =(props)=>{
     const [inputName, setInputName] = useState("");
     const [inputAge, setInputAge] = useState("");
@@ -35,10 +37,14 @@ const CreateUser =(props)=>{
       setInputName("");
       setInputAge("");
     };
+    const errorHandler =() =>{
+        setError(false)
+    }
 
     return (
         <div className={styles.input}>
-            {error && (<h2>{error.title} {error.message}</h2>)}
+            {error && <ErrorModal title = {error.title} message = {error.message} onCloseModal={errorHandler}/>}
+            <Card className={styles.input}>
             <form onSubmit={createUserHandler}>
                 <label>Name</label>
                 <input type="text" id="name" value={inputName} onChange={nameChangeHandler}></input>
@@ -46,6 +52,7 @@ const CreateUser =(props)=>{
                 <input type="number" id="age" value={inputAge} onChange={ageChangeHandler}></input>
                 <Button type="submit">Add User</Button>
             </form>
+            </Card>
         </div>
     )
 }
