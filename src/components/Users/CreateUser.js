@@ -46,9 +46,9 @@ const CreateUser =(props)=>{
             {error && <ErrorModal title = {error.title} message = {error.message} onCloseModal={errorHandler}/>}
             <Card className={styles.input}>
             <form onSubmit={createUserHandler}>
-                <label>Name</label>
-                <input type="text" htmlFor="name" value={inputName} onChange={nameChangeHandler}></input>
-                <label>Age</label>
+                <label htmlFor="name">Name</label>
+                <input type="text" id="name" value={inputName} onChange={nameChangeHandler}></input>
+                <label htmlFor="age">Age</label>
                 <input type="number" id="age" value={inputAge} onChange={ageChangeHandler}></input>
                 <Button type="submit">Add User</Button>
             </form>
