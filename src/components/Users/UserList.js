@@ -1,9 +1,10 @@
-import styles from "./UserList.module.css"
+import styles from "./UserList.module.css";
+import Card from "../UI/Card";
 
 
 const UserList =(props) =>{
     return (
-        <div className={styles.users}>
+        <Card className={styles.users}>
             <ul>
             {props.users.map((user) => (
                  <li key={user.id}>
@@ -11,7 +12,7 @@ const UserList =(props) =>{
                  </li>
                ))}
             </ul>
-        </div>
+        </Card>
     )
     
 }
